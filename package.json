@@ -1,0 +1,14 @@
+{
+  "name": "helloelectron",
+  "version": "1.0.0",
+  "description": "\"Primeiro contato com Electron\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "joselucassr",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^17.1.0"
+  }
+}
