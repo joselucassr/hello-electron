@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="" style="max-height: 100vh" alt="" />
+
+    <script src="http://192.168.0.3:8081/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io(`192.168.0.3:8081`);
+      socket.on('update', () => {
+        console.log('Updating');
+        loadImage();
+      });
+
+      const loadImage = () => {
+        let imgObj = document.querySelector('img');
+
+        fetch('/filesInfo.json')
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            imgObj.src =
+              'temp/' + data.tempFileName + '#' + new Date().getTime();
+          });
+
+        console.log(imgObj);
+      };
+
+      loadImage();
+    </script>
+  </body>
+</html>

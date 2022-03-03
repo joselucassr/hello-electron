@@ -10,5 +10,10 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^17.1.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
   }
 }
